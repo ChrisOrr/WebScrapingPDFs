@@ -3,9 +3,6 @@ import urllib
 import urllib.request
 import sys
 
-
-
-
 def make_soup(url): #function for getting the website address
     thepage = urllib.request.urlopen(url)
     soupdata = BeautifulSoup(thepage, "html.parser")
