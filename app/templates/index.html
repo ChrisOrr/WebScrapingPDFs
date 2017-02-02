@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{%  block content %}
+    {% if webpage %}
+        <h2>Home Page</h2>
+        <h3>Your website is {{ webpage }}</h3>
+    {% else %}
+        <h1>This Is The Home Page</h1>
+    {% endif %}
+{%  endblock %}

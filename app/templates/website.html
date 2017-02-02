@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{%  block content %}
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Website Search</legend>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="webpage">Website</label>
+                <div class="col-md-4">
+                    <input id="webpage" name="webpage" type="text" placeholder="https://www." class="form-control input-md" required="">
+                    <span class="help-block">E.G "https://www.google.co.uk/"</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="search"></label>
+                <div class="col-md-4">
+                    <button id="search" name="search" class="btn btn-success">Search</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    {% if tabledata %}
+    <table>
+        <tr>
+            <td>PDF ID</td>
+            <td>Website</td>
+            <td>File Address</td>
+            <td>Last Date</td>
+            <td>Latest Update</td>
+        </tr>
+        {% for row in tabledata %}
+            {% if row[4] == user.ID %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    {% endif %}
+{%  endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{%  block content %}
+    <div class="col-xs-12 col-md-6 signup">
+        <form data-toggle="validator" role="form" class="form-horizontal" method="POST" action="/signup">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email</label>
+                    <div class="col-md-5">
+                        <input id="email" name="email" type="text" placeholder="someone@example.com" class="form-control input-md" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Username</label>
+                    <div class="col-md-5">
+                        <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputPassword">Password</label>
+                    <div class="col-md-5">
+                        <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="******" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputPasswordConfirm">Confirm Password</label>
+                    <div class="col-md-5">
+                        <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="******" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <input id="signup" type="submit" value="signup" name="singlebutton" class="btn btn-primary">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-xs-12 col-md-6 login">
+        <form class="form-horizontal" method="POST" action="/login">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Username</label>
+                    <div class="col-md-5">
+                        <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="passwordinput">Password</label>
+                    <div class="col-md-5">
+                        <input id="passwordinput" name="passwordinput" type="password" placeholder="********" class="form-control input-md" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <input id="login" type="submit" value="Login" name="singlebutton" class="btn btn-primary">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{%  endblock %}
